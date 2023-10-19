@@ -9,3 +9,10 @@ in tmux config run
 
 to start a tmux session, in terminal run 
 `tmux new -s someName`
+
+
+### LSP dependencies
+golang-go
+npm
+python3
+luarocks
