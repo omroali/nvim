@@ -16,17 +16,18 @@ require("config.globals")
 require("config.options")
 require("config.keymaps")
 
+
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
   defaults = {
     lazy = true, -- should plugins be lazy-loaded?
   },
---  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
+ lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   install = {
     -- install missing plugins on startup. This doesn't increase startup time.
     missing = true,
     -- try to load one of these colorschemes when starting an installation during startup
-    colorscheme = { "nightfox" },
+    colorscheme = { "gruvbox", "nightfox"},
   },
   diff = {
     -- diff command <d> can be one of:
