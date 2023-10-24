@@ -40,6 +40,12 @@ keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
+-- Moving code up/down a line
+keymap.set("n", "<A-j>", ":m .+1<CR>==", opts) -- move line down
+keymap.set("n", "<A-k>", ":m .-2<CR>==", opts) -- move line up 
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move line down
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move line up 
+
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false })
