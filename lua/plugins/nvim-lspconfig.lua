@@ -6,10 +6,10 @@ local config = function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local lspconfig = require("lspconfig")
 
-  for type, icon in pairs(diagnostic_signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-  end
+	for type, icon in pairs(diagnostic_signs) do
+		local hl = "DiagnosticSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
 
 	local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -75,12 +75,25 @@ local config = function()
 		filetypes = { "sh" },
 	})
 
-	-- solidity
-	lspconfig.solidity.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "solidity" },
-	})
+	-- -- rust
+	-- lspconfig.rust_analyzer.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = { "rust" },
+	-- 	root_dir = util.root_pattern("Cargo.toml"),
+	-- 	settings = {
+	-- 		cargo = {
+	-- 			allFeatures = true,
+	-- 		},
+	-- 	},
+	-- })
+
+	-- -- solidity
+	-- lspconfig.solidity.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = { "solidity" },
+	-- })
 
 	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
@@ -94,8 +107,8 @@ local config = function()
 			"css",
 			"sass",
 			"scss",
-			"less",
-			"svelte",
+			-- "less",
+			-- "svelte",
 			"vue",
 		},
 	})

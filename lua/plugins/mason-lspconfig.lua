@@ -11,6 +11,8 @@ local opts = {
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
+		"ast_grep",
+		"rust_analyzer",
 	},
 
 	automatic_installation = true,
