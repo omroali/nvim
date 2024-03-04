@@ -16,3 +16,23 @@ golang-go
 npm
 python3
 luarocks
+
+
+
+
+
+
+### Install nvim
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+```
+
+add into .bashrc
+```
+# nvim 
+export PATH="$PATH:/opt/nvim-linux64/bin"
+alias vim='nvim'
+```
+
