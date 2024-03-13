@@ -14,14 +14,14 @@ local config = function()
 			globalstatus = true, -- set to true because we want only 1 lualine
 		},
 		tabline = {
-			lualine_a = { "mode" },
+			lualine_a = { "mode", "hostname" },
 			-- lualine_b = { "buffers" },
 			lualine_b = { "branch", "diff", "diagnostics" },
 			lualine_c = { "filename" },
 
 			lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_y = { "progress" },
-			lualine_z = { "location" },
+			lualine_z = { "location", "searchcount" },
 		},
 		sections = {},
 	})
