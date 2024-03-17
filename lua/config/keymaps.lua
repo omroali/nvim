@@ -16,6 +16,7 @@ keymap.set("n", "<C-h>", "<C-w>h", opts) -- nav left
 keymap.set("n", "<C-j>", "<C-w>j", opts) -- nav left
 keymap.set("n", "<C-k>", "<C-w>k", opts) -- nav left
 keymap.set("n", "<C-l>", "<C-w>l", opts) -- nav left
+
 -- Tmix Pane Nav
 keymap.set("n", "<C-h>", "TmuxNavigateLeft") -- Navigate Left
 keymap.set("n", "<C-j>", "TmuxNavigateDown") -- Navigate Down
