@@ -1,6 +1,7 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+
 -- Buffer Navigation
 keymap.set("n", "<leader>bn", "bnext") -- Next buffer
 keymap.set("n", "<leader>bp", "bprevious") -- Prev buffer
