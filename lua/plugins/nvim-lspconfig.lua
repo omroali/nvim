@@ -59,14 +59,14 @@ local config = function()
 	})
 
 	-- typescript
-	lspconfig.tsserver.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		filetypes = {
-			"typescript",
-		},
-		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
-	})
+	-- lspconfig.tsserver.setup({
+	-- 	on_attach = on_attach,
+	-- 	capabilities = capabilities,
+	-- 	filetypes = {
+	-- 		"typescript",
+	-- 	},
+	-- 	root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+	-- })
 
 	-- bash
 	lspconfig.bashls.setup({
@@ -96,23 +96,39 @@ local config = function()
 	-- })
 
 	-- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
-	lspconfig.emmet_ls.setup({
+	-- lspconfig.emmet_ls.setup({
+	-- 	capabilities = capabilities,
+	-- 	on_attach = on_attach,
+	-- 	filetypes = {
+	-- 		"html",
+	-- 		"typescriptreact",
+	-- 		"javascriptreact",
+	-- 		"javascript",
+	-- 		"css",
+	-- 		"sass",
+	-- 		"scss",
+	-- 		-- "less",
+	-- 		-- "svelte",
+	-- 		"vue",
+	-- 	},
+	-- })
+
+	lspconfig.typst_lsp.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = {
-			"html",
-			"typescriptreact",
-			"javascriptreact",
-			"javascript",
-			"css",
-			"sass",
-			"scss",
-			-- "less",
-			-- "svelte",
-			"vue",
+			"typst",
 		},
 	})
 
+	lspconfig.grammarly.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = {
+			"markdown",
+			"typst",
+		},
+	})
 	-- docker
 	lspconfig.dockerls.setup({
 		capabilities = capabilities,
@@ -131,6 +147,7 @@ local config = function()
 	local alex = require("efmls-configs.linters.alex")
 	local hadolint = require("efmls-configs.linters.hadolint")
 	local solhint = require("efmls-configs.linters.solhint")
+	local typstfmt = require("efmls-configs.formatters.typstfmt")
 	--
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -149,6 +166,7 @@ local config = function()
 			"markdown",
 			"docker",
 			"solidity",
+			"typst",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -174,6 +192,7 @@ local config = function()
 				markdown = { alex, prettierd },
 				docker = { hadolint, prettierd },
 				solidity = { solhint },
+				typst = { typstfmt },
 			},
 		},
 	})
