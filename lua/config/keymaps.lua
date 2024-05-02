@@ -1,7 +1,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-
 -- Buffer Navigation
 keymap.set("n", "<leader>bn", "bnext") -- Next buffer
 keymap.set("n", "<leader>bp", "bprevious") -- Prev buffer
@@ -17,6 +16,9 @@ keymap.set("n", "<C-h>", "<C-w>h", opts) -- nav left
 keymap.set("n", "<C-j>", "<C-w>j", opts) -- nav left
 keymap.set("n", "<C-k>", "<C-w>k", opts) -- nav left
 keymap.set("n", "<C-l>", "<C-w>l", opts) -- nav left
+
+-- Obsidian
+keymap.set("n", "<leader>fl", ":ObsidianFollowLink", opts) -- Follow Link
 
 -- Tmix Pane Nav
 keymap.set("n", "<C-h>", "TmuxNavigateLeft") -- Navigate Left
